@@ -1,9 +1,9 @@
 import React from 'react';
-// import { nanoid } from 'nanoid';
 import { InputContacts } from './PhoneBook/InputContacts.jsx';
 import { Contacts } from './PhoneBook/ContactsList';
 import { Filter } from './PhoneBook/Filter';
 import { Container, Title } from './PhoneBook/Form.styled';
+import { nanoid } from 'nanoid';
 
 export class App extends React.Component {
   state = {
@@ -27,15 +27,19 @@ export class App extends React.Component {
       return;
     }
 
-    // const id = nanoid();
+    const id = nanoid();
+    const newContact = {
+      ...contact,
+      id,
+    };
+
     this.setState(prev => ({
-      contacts: [...prev.contacts, contact],
+      contacts: [...prev.contacts, newContact],
     }));
   };
 
   handleFilterChange = filterValue => {
     this.setState({ filter: filterValue });
-    console.log(filterValue);
   };
 
   getfilteredContacts = () => {

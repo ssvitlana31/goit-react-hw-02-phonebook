@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { ContactList, ContactItem, DeleteButton } from './Form.styled';
+import { nanoid } from 'nanoid';
 
 export const Contacts = ({ options, onDeleteContact }) => {
   return (
     <ContactList>
       {options.map(({ id, name, number }) => (
-        <ContactItem key={id}>
+        <ContactItem key={nanoid()}>
           {name} {number}
           <DeleteButton onClick={() => onDeleteContact(id)}>
             Delete
