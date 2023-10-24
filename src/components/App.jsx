@@ -1,5 +1,5 @@
 import React from 'react';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import { InputContacts } from './PhoneBook/InputContacts.jsx';
 import { Contacts } from './PhoneBook/ContactsList';
 import { Filter } from './PhoneBook/Filter';
@@ -27,7 +27,7 @@ export class App extends React.Component {
       return;
     }
 
-    const id = nanoid();
+    // const id = nanoid();
     this.setState(prev => ({
       contacts: [...prev.contacts, contact],
     }));
